@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beto Adorador - Acompanhamento no Teclado</title>
+    <!-- Fonte Luxuosa Gospel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Montserrat:wght@400;600;700;800&family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- CABEÇALHO COM LOGOTIPO OFICIAL BETO ADORADOR -->
+        <header class="logo-header">
+            <div class="logo-circle">
+                <svg viewBox="0 0 500 500" class="logo-svg">
+                    <defs>
+                        <!-- Gradientes Luxuosos -->
+                        <radialGradient id="goldGold" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" stop-color="#ffe885"/>
+                            <stop offset="50%" stop-color="#d4af37"/>
+                            <stop offset="100%" stop-color="#8a6d1c"/>
+                        </radialGradient>
+                        <radialGradient id="bgGlow" cx="50%" cy="40%" r="60%">
+                            <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.8"/>
+                            <stop offset="40%" stop-color="#d97706" stop-opacity="0.4"/>
+                            <stop offset="100%" stop-color="#020617" stop-opacity="0.95"/>
+                        </radialGradient>
+                        <linearGradient id="crossGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#ffffff"/>
+                            <stop offset="50%" stop-color="#fef08a"/>
+                            <stop offset="100%" stop-color="#ca8a04"/>
+                        </linearGradient>
+                        <filter id="glowEffect">
+                            <feGaussianBlur stdDeviation="8" result="blur" />
+                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                        </filter>
+                    </defs>
+
+                    <!-- Anel Externo Dourado -->
+                    <circle cx="250" cy="250" r="240" fill="none" stroke="url(#goldGold)" stroke-width="12" />
+                    <circle cx="250" cy="250" r="230" fill="url(#bgGlow)" stroke="#000" stroke-width="4" />
+
+                    <!-- Cruz Iluminada ao Fundo -->
+                    <g filter="url(#glowEffect)">
+                        <rect x="330" y="110" width="22" height="150" fill="url(#crossGlow)" rx="4"/>
+                        <rect x="285" y="145" width="112" height="22" fill="url(#crossGlow)" rx="4"/>
+                    </g>
+
+                    <!-- Adorador Ajoelhado em Oração com a Bíblia -->
+                    <g transform="translate(110, 100)">
+                        <!-- Cabeça inclinada -->
+                        <circle cx="160" cy="65" r="26" fill="#f59e0b" />
+                        <path d="M 140,55 Q 165,40 180,60" fill="none" stroke="#78350f" stroke-width="5" stroke-linecap="round"/>
+                        <!-- Braços forte/musculosos segurando a Bíblia -->
+                        <path d="M 120,110 Q 155,95 180,115 T 195,145" fill="none" stroke="#d97706" stroke-width="22" stroke-linecap="round"/>
+                        <!-- Bíblia Sagrada Dourada -->
+                        <rect x="180" y="105" width="48" height="65" rx="5" fill="#0f172a" stroke="url(#goldGold)" stroke-width="3"/>
+                        <text x="187" y="130" font-family="'Cinzel', serif" font-size="9" fill="#fbbf24" font-weight="bold">BÍBLIA</text>
+                        <text x="185" y="145" font-family="'Cinzel', serif" font-size="8" fill="#fbbf24">SAGRADA</text>
+                        <!-- Corpo Ajoelhado -->
+                        <path d="M 120,100 C 100,120 90,160 85,210 L 140,210 C 150,185 160,160 180,150 Z" fill="#1e293b"/>
+                    </g>
+
+                    <!-- Texto BETO adorador 3D -->
+                    <text x="250" y="380" text-anchor="middle" font-family="'Montserrat', sans-serif" font-weight="900" font-size="68" fill="url(#goldGold)" stroke="#000" stroke-width="4" letter-spacing="3">BETO</text>
+                    <text x="250" y="430" text-anchor="middle" font-family="'Caveat', cursive" font-size="58" fill="#ffffff" filter="url(#glowEffect)">adorador</text>
+                    <!-- Sublinhado Dourado -->
+                    <path d="M 140,445 Q 250,465 360,445" fill="none" stroke="url(#goldGold)" stroke-width="6" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <p class="tagline">Aprenda a tocar os maiores louvores no seu teclado real!</p>
+        </header>
+
+        <!-- SELEÇÃO DA MÚSICA GOSPEL (TOP SPOTIFY) -->
+        <section class="card selection-card">
+            <label for="songSelect"><strong>📖 Escolha o Louvor Gospel:</strong></label>
+            <select id="songSelect" onchange="changeSong()">
+                <option value="casa">1. A Casa É Sua (Casa Worship)</option>
+                <option value="bondade" selected>2. Bondade de Deus (Isaías Saad)</option>
+                <option value="todavia">3. Todavia Me Alegrarei (Samuel Messias)</option>
+                <option value="lugar">4. Lugar Secreto (Gabriela Rocha)</option>
+                <option value="deserto">5. Deserto (Maria Marçal)</option>
+                <option value="atraiu">6. Me Atraiu (Gabriela Rocha)</option>
+                <option value="lindoes">7. Lindo És + Só Quero Ver Você (Morada)</option>
+                <option value="tudo">8. É Tudo Sobre Você (Morada)</option>
+                <option value="bencaos">9. Bênçãos Que Não Têm Fim (Isadora Pompeo)</option>
+                <option value="ninguem">10. Ninguém Explica Deus (Gabriela Rocha)</option>
+            </select>
+        </section>
+
+        <!-- VISOR PRINCIPAL DA TECLA E DEDILHADO -->
+        <section class="card display-card">
+            <div class="instruction-badge">Toque no seu teclado físico:</div>
+            
+            <div class="note-huge" id="currentNote">DÓ</div>
+            
+            <div class="finger-badge" id="fingerGuide">
+                <span class="hand-icon">✋</span> Mão Direita — Dedo 1 (Polegar)
+            </div>
+
+            <!-- GUIA TECLADO VISUAL DE REFERÊNCIA -->
+            <div class="keyboard-container">
+                <div class="keyboard-ref">
+                    <div class="key-white" id="k-C"><span>Dó</span></div>
+                    <div class="key-white" id="k-D"><span>Ré</span></div>
+                    <div class="key-white" id="k-E"><span>Mi</span></div>
+                    <div class="key-white" id="k-F"><span>Fá</span></div>
+                    <div class="key-white" id="k-G"><span>Sol</span></div>
+                    <div class="key-white" id="k-A"><span>Lá</span></div>
+                    <div class="key-white" id="k-B"><span>Si</span></div>
+                </div>
+            </div>
+
+            <!-- BARRA DE PROGRESSO DO LOUVOR -->
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress"></div>
+                </div>
+                <div class="step-indicator" id="stepCounter">Passo 1 de 7</div>
+            </div>
+        </section>
+
+        <!-- CONTROLES DE PLAYBACK E ACOMPANHAMENTO -->
+        <section class="card controls-card">
+            <button class="btn btn-secondary" onclick="prevNote()">⬅ Anterior</button>
+            <button class="btn btn-audio" onclick="playCurrentAudio()">🔊 Ouvir Nota</button>
+            <button class="btn btn-secondary" onclick="nextNote()">Próxima ➡</button>
+        </section>
+
+        <section class="card play-card">
+            <button class="btn btn-primary" id="playBtn" onclick="togglePlayback()">
+                ▶ Iniciar Playback Instrumental
+            </button>
+            
+            <!-- SENSOR DE MICROFONE -->
+            <div class="mic-box">
+                <label class="mic-toggle">
+                    <input type="checkbox" id="micCheck" onchange="toggleMic()">
+                    <span class="mic-slider"></span>
+                    🎙 Usar Microfone para detectar meu teclado real
+                </label>
+                <div id="micStatus" class="mic-status">Microfone desligado</div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO PARA CARREGAR MP3 PRÓPRIO -->
+        <section class="card mp3-card">
+            <label for="mp3Upload" class="mp3-label">
+                🎵 Carregar Playback MP3 do seu celular
+            </label>
+            <input type="file" id="mp3Upload" accept="audio/mp3, audio/*" onchange="loadUserMp3(event)">
+            <audio id="bgAudio" controls style="display:none; width:100%; margin-top:10px;"></audio>
+        </section>
+
+        <footer>
+            Beto Adorador © Todos os direitos reservados — Desenvolvido para abençoar seu aprendizado!
+        </footer>
+    </div>
+
+    <!-- SCRIPT DE FUNCIONAMENTO -->
+    <script>
+        const songs = {
+            casa: [
+                { note: 'MI', key: 'E', finger: 'Mão Direita — Dedo 3 (Médio)' },
+                { note: 'MI', key: 'E', finger: 'Mão Direita — Dedo 3 (Médio)' },
+                { note: 'SOL', key: 'G', finger: 'Mão Direita — Dedo 5 (Mínimo)' },
+                { note: 'MI', key: 'E', finger: 'Mão Direita — Dedo 3 (Médio)' },
+                { note: 'RÉ', key: 'D', finger: 'Mão Direita — Dedo 2 (Indicador)' },
+                { note: 'DÓ', key: 'C', finger: 'Mão Direita — Dedo 1 (Polegar)' },
+                { note: 'DÓ', key: 'C', finger: 'Mão Direita — Dedo 1 (Polegar)' }
+            ],
+            bondade: [
+                { note: 'DÓ', key: 'C', finger: 'Mão Direita — Dedo 1 (Polegar)' },
+                { note: 'MI', key: 'E', finger: 'Mão Direita — Dedo 3 (Médio)' },
+                { note: 'SOL', key: 'G', finger: 'Mão Direita — Dedo 5 (Mínimo)' },
+                { note: 'SOL', key: 'G', finger: 'Mão Direita — Dedo 5 (Mínimo)' },
+                { note: 'LÁ', key: 'A', finger: 'Mão Direita — Dedo 5 (Extensão)' },
+                { note: 'SOL', key: 'G', finger: 'Mão Direita — Dedo 4 (Anelar)' },
+                { note: 'MI', key: 'E', finger: 'Mão Direita — Dedo 2 (Indicador)' }
+            ],
+            todavia: [
+                { note: 'LÁ', key: 'A', finger: 'Mão Direita — Dedo 4 (Anelar)' },
+                { note: 'LÁ', key: 'A', finger: 'Mão Direita — Dedo 4 (Anelar)' },
+                { note: 'SOL', key: 'G', finger: 'Mão Direita — Dedo 3 (Médio)' },
+                { note: 'FÁ', key: 'F', finger: 'Mão Direita — Dedo 2 (Indicador)' },
+                { note: 'MI', key: 'E', finger: 'Mão Direita — Dedo 1 (Polegar)' },
+                { note: 'FÁ', key: 'F', finger: 'Mão Direita — Dedo 2 (Indicador)' },
+                { note: 'SOL', key: 'G', finger: 'Mão Direita — Dedo 3 (Médio)' }
+            ],
+            lugar: [
+                { note: 'SOL', key: 'G', finger: 'Mão Direita — Dedo 5 (Mínimo)' },
+                { note: 'SOL', key: 'G', finger: 'Mão Direita — Dedo 5 (Mínimo)' },
+                { note: 'FÁ', key: 'F', finger: 'Mão Direita — Dedo 4 (Anelar)' },
+                { note: 'MI', key: 'E', finger: 'Mão Direita — Dedo 3 (Médio)' },
+                { note: 'MI', key: 'E', finger: 'Mão Direita — Dedo 3 (Médio)' },
+                { note: 'RÉ', key: 'D', finger: 'Mão Direita — Dedo 2 (Indicador)' },
+                { note: 'DÓ', key: 'C', finger: 'Mão Direita — Dedo 1 (Polegar)' }
+            ],
+            deserto: [
+                { note: 'MI', key: 'E', finger: 'Mão Direita — Dedo 3 (Médio)' },
+                { note: 'FÁ', key: 'F', finger: 'Mão Direita — Dedo 4 (Anelar)' },
+                { note: 'SOL', key: 'G', finger: 'Mão Direita — Dedo 5 (Mínimo)' },
+                { note: 'SOL', key: 'G', finger: 'Mão Direita — Dedo 5 (Mínimo)' },
+                { note: 'FÁ', key: 'F', finger: 'Mão Direita — Dedo 4 (Anelar)' },
+                { note: 'MI', key: 'E', finger: 'Mão Direita — Dedo 3 (Médio)' },
+                { note: 'RÉ', key: 'D', finger: 'Mão Direita — Dedo 2 (Indicador)' }
+            ],
+            atraiu: [
+                { note: 'LÁ', key: 'A', finger: 'Mão Direita — Dedo 4 (Anelar)' },
+                { note: 'SOL', key: 'G', finger: 'Mão Direita — Dedo 3 (Médio)' },
+                { note: 'FÁ', key: 'F', finger: 'Mão Direita — Dedo 2 (Indicador)' },
+                { note: 'MI', key: 'E', finger: 'Mão Direita — Dedo 1 (Polegar)' },
+                { note: 'FÁ', key: 'F', finger: 'Mão Direita — Dedo 2 (Indicador)' },
+                { note: 'SOL', key: 'G', finger: 'Mão Direita — Dedo 3 (Médio)' }
+            ],
+            lindoes: [
+                { note: 'MI', key: 'E', finger: 'Mão Direita — Dedo 1 (Polegar)' },
+                { note: 'SOL', key: 'G', finger: 'Mão Direita — Dedo 3 (Médio)' },
+                { note: 'LÁ', key: 'A', finger: 'Mão Direita — Dedo 4 (Anelar)' },
+                { note: 'SOL', key: 'G', finger: 'Mão Direita — Dedo 3 (Médio)' },
+                { note: 'MI', key: 'E', finger: 'Mão Direita — Dedo 1 (Polegar)' },
+                { note: 'RÉ', key: 'D', finger: 'Mão Direita — Dedo 2 (Indicador)' }
+            ],
+            tudo: [
+                { note: 'DÓ', key: 'C', finger: 'Mão Direita — Dedo 1 (Polegar)' },
+                { note: 'DÓ', key: 'C', finger: 'Mão Direita — Dedo 1 (Polegar)' },
+                { note: 'RÉ', key: 'D', finger: 'Mão Direita — Dedo 2 (Indicador)' },
+                { note: 'MI', key: 'E', finger: 'Mão Direita — Dedo 3 (Médio)' },
+                { note: 'MI', key: 'E', finger: 'Mão Direita — Dedo 3 (Médio)' },
+                { note: 'RÉ', key: 'D', finger: 'Mão Direita — Dedo 2 (Indicador)' },
+                { note: 'DÓ', key: 'C', finger: 'Mão Direita — Dedo 1 (Polegar)' }
+            ],
+            bencaos: [
+                { note: 'SOL', key: 'G', finger: 'Mão Direita — Dedo 5 (Mínimo)' },
+                { note: 'SOL', key: 'G', finger: 'Mão Direita — Dedo 5 (Mínimo)' },
+                { note: 'MI', key: 'E', finger: 'Mão Direita — Dedo 3 (Médio)' },
+                { note: 'RÉ', key: 'D', finger: 'Mão Direita — Dedo 2 (Indicador)' },
+                { note: 'DÓ', key: 'C', finger: 'Mão Direita — Dedo 1 (Polegar)' },
+                { note: 'RÉ', key: 'D', finger: 'Mão Direita — Dedo 2 (Indicador)' },
+                { note: 'MI', key: 'E', finger: 'Mão Direita — Dedo 3 (Médio)' }
+            ],
+            ninguem: [
+                { note: 'DÓ', key: 'C', finger: 'Mão Direita — Dedo 1 (Polegar)' },
+                { note: 'RÉ', key: 'D', finger: 'Mão Direita — Dedo 2 (Indicador)' },
+                { note: 'MI', key: 'E', finger: 'Mão Direita — Dedo 3 (Médio)' },
+                { note: 'FÁ', key: 'F', finger: 'Mão Direita — Dedo 4 (Anelar)' },
+                { note: 'SOL', key: 'G', finger: 'Mão Direita — Dedo 5 (Mínimo)' },
+                { note: 'SOL', key: 'G', finger: 'Mão Direita — Dedo 5 (Mínimo)' },
+                { note: 'MI', key: 'E', finger: 'Mão Direita — Dedo 3 (Médio)' }
+            ]
+        };
+
+        let currentSongKey = 'bondade';
+        let currentSong = songs[currentSongKey];
+        let currentIndex = 0;
+        let isPlaying = false;
+        let playbackTimer = null;
+
+        function updateDisplay() {
+            const item = currentSong[currentIndex];
+            document.getElementById('currentNote').innerText = item.note;
+            document.getElementById('fingerGuide').innerHTML = `<span class="hand-icon">✋</span> ${item.finger}`;
+
+            document.querySelectorAll('.key-white').forEach(k => k.classList.remove('active'));
+            const activeKey = document.getElementById(`k-${item.key}`);
+            if (activeKey) activeKey.classList.add('active');
+
+            const pct = ((currentIndex + 1) / currentSong.length) * 100;
+            document.getElementById('progress').style.width = `${pct}%`;
+            document.getElementById('stepCounter').innerText = `Passo ${currentIndex + 1} de ${currentSong.length}`;
+        }
+
+        function nextNote() {
+            if (currentIndex < currentSong.length - 1) {
+                currentIndex++;
+            } else {
+                currentIndex = 0;
+            }
+            updateDisplay();
+        }
+
+        function prevNote() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateDisplay();
+            }
+        }
+
+        function changeSong() {
+            currentSongKey = document.getElementById('songSelect').value;
+            currentSong = songs[currentSongKey];
+            currentIndex = 0;
+            updateDisplay();
+            if (isPlaying) stopPlayback();
+        }
+
+        function playCurrentAudio() {
+            const freqMap = { 'C': 261.63, 'D': 293.66, 'E': 329.63, 'F': 349.23, 'G': 392.00, 'A': 440.00, 'B': 493.88 };
+            const ctx = new (window.AudioContext || window.webkitAudioContext)();
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+
+            const key = currentSong[currentIndex].key;
+            osc.frequency.value = freqMap[key] || 261.63;
+            osc.type = 'triangle';
+
+            osc.connect(gain);
+            gain.connect(ctx.destination);
+
+            osc.start();
+            gain.gain.exponentialRampToValueAtTime(0.00001, ctx.currentTime + 1.0);
+            osc.stop(ctx.currentTime + 1.0);
+        }
+
+        function togglePlayback() {
+            if (isPlaying) {
+                stopPlayback();
+            } else {
+                startPlayback();
+            }
+        }
+
+        function startPlayback() {
+            isPlaying = true;
+            document.getElementById('playBtn').innerHTML = '⏸ Pausar Playback';
+            document.getElementById('playBtn').style.background = '#dc2626';
+
+            playbackTimer = setInterval(() => {
+                playCurrentAudio();
+                nextNote();
+            }, 1800);
+        }
+
+        function stopPlayback() {
+            isPlaying = false;
+            clearInterval(playbackTimer);
+            document.getElementById('playBtn').innerHTML = '▶ Iniciar Playback Instrumental';
+            document.getElementById('playBtn').style.background = 'linear-gradient(135deg, #fbbf24 0%, #d97706 100%)';
+        }
+
+        function loadUserMp3(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const audioEl = document.getElementById('bgAudio');
+                audioEl.src = URL.createObjectURL(file);
+                audioEl.style.display = 'block';
+            }
+        }
+
+        function toggleMic() {
+            const checked = document.getElementById('micCheck').checked;
+            const status = document.getElementById('micStatus');
+            if (checked) {
+                navigator.mediaDevices.getUserMedia({ audio: true })
+                    .then(() => {
+                        status.innerText = '🟢 Microfone Ativo: Escutando seu teclado real...';
+                        status.style.color = '#4ade80';
+                    })
+                    .catch(() => {
+                        status.innerText = '🔴 Permissão de microfone negada.';
+                        status.style.color = '#f87171';
+                    });
+            } else {
+                status.innerText = 'Microfone desligado';
+                status.style.color = '#94a3b8';
+            }
+        }
+
+        // Inicializa o app
+        updateDisplay();
+    </script>
+</body>
+</html>
